@@ -1,0 +1,3 @@
+multiviews: true
+exclude: ['Rakefile', 'config.rb', 'README.md']
+permalink: /posts/:title.html

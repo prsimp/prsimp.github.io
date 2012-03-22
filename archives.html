@@ -1,0 +1,21 @@
+---
+layout: default
+title: Archives | Paul Simpson
+---
+<section class="archives">
+  <ul>
+  {% for post in site.posts %} 
+    {% unless forloop.last %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date_to_long_string }}</span>
+    </li>
+    {% else %}
+    <li class="the_end">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date_to_long_string }}</span>
+    </li>
+    {% endunless %}
+  {% endfor %}
+  </ul>
+</section>

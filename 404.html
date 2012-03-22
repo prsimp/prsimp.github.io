@@ -1,0 +1,32 @@
+---
+layout: default
+title: Not Found - Paul Simpson
+---
+<section class="short_list">
+  <h1>Oh no...</h1>
+  <p>
+    I'm sorry, but whatever it was you were looking for can't seem to be located.
+    It could be that I've moved it to some other location, althogh it sure wasn't
+    very nice of me to do that without properly redirecting. I bet you can find whatever
+    you were looking for if you <a href="/archives.html">check the archives</a>.
+  </p>
+  <p>
+    Again, sorry. This is a bit awkward. Just in case, here is a list of my most recent posts:
+  </p>
+  <h5>Recent Ramblings</h5>
+  <ul>
+  {% for post in site.posts limit: 5 %} 
+    {% unless forloop.last %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date_to_long_string }}</span>
+    </li>
+    {% else %}
+    <li class="the_end">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date_to_long_string }}</span>
+    </li>
+    {% endunless %}
+  {% endfor %}
+  </ul>
+</section>

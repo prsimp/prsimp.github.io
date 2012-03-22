@@ -1,0 +1,8 @@
+:plain
+  ---
+  layout: default
+  ---
+%section.post
+  %h1 {{ page.title }}
+  %h6.meta {{ page.date | date_to_long_string }} &mdash; {{ page.location }}
+  {{ content }}

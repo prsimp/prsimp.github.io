@@ -1,0 +1,53 @@
+// Typography
+// This will expand as I need more styles (i.e. <code>,<pre> etc.)
+// ---------------------------------------------------------------
+
+h1,h2,h3,h4,h5,h6,
+p, blockquote {
+  line-height: 1.5;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $h_font_stack;
+  font-weight: bold;
+  color: $headings;
+}
+
+h1 { font-size: 32px; font-size: 2rem; }
+h2 { font-size: 24px; font-size: 1.5rem; }
+h3 { font-size: 22px; font-size: 1.375rem; }
+h4 { font-size: 20px; font-size: 1.25rem; }
+h5 { font-size: 18px; font-size: 1.125rem; }
+h6 { font-size: 16px; font-size: 1rem; }
+
+p { color: $text; }
+
+blockquote {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: $text;
+  padding: 10px 20px 10px 20px;
+  border-left: 2px solid $red;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    margin-top: 10px;
+    margin-top: 0.625rem;
+    display: block;
+
+    &:before { content: "\2014 \0020"; }
+  }
+}
+
+a {
+  color: $links;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}

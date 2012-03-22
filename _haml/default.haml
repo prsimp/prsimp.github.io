@@ -1,0 +1,28 @@
+- feedback = "https://github.com/prsimp/feedback/issues/new"
+- projects = "http://prsimp.github.com/"
+
+!!!
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %title {{ page.title }}
+    %meta(name="author" content="Paul Simpson")
+    / Primary Stylesheet
+    %link(href="/css/style.css" rel="stylesheet")
+    / TypeKit Jazz
+    %script(type="text/javascript" src="http://use.typekit.com/lob8uru.js")
+    %script(type="text/javascript") try{Typekit.load();}catch(e){}
+
+  %body
+    %div.container
+      %header
+        %div.logo
+          %a(href="/") <h1>Paul Simpson</h1>
+        %nav
+          %ul
+            %li <a href="/about">about</a>
+            %li <a href="#{projects}">projects</a>
+            %li <a href="#{feedback}">ask me</a>
+            %li <a href="/archives">archives</a>
+      {{ content }}
+      %footer
