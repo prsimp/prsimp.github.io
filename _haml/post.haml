@@ -6,3 +6,4 @@
   %h1 {{ page.title }}
   %h6.meta {{ page.date | date_to_long_string }} &mdash; {{ page.location }}
   {{ content }}
+  {% include disqus_comments.html %}
