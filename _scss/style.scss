@@ -14,7 +14,8 @@ $border_light:  rgba(0,0,0,0.10);
 $border_dark:   rgba(0,0,0,0.25);
 
 $p_font_stack:  'museo-sans-1', 'museo-sans-2', Helvetica, Arial, sans-serif;
-$h_font_stack:  'museo-slab-1', 'museo-slab-2', Helvetica, Arial, sasn-serif;
+$h_font_stack:  'museo-slab-1', 'museo-slab-2', Helvetica, Arial, sans-serif;
+$c_font_stack:  'Bit Stream Vera Mono', 'Consolas', 'Courier New', monospace;
 
 $columns:       12;
 $column_width:  40px;
@@ -189,6 +190,28 @@ section {
     float: right; 
     color: lighten($headings, 45%);
   }
+}
+
+code.inline {
+  background-color: #fdf6e3;
+  font-family: $c_font_stack;
+  font-size: 14px;
+  font-size: 0.875rem;
+  border: 1px solid $border_dark;
+  padding: 4px 2px 0 2px;
+  @include border-radius(2px);
+}
+
+.highlight {
+  margin: 0 2px 24px 2px;
+  margin: 0 0.125rem 1.5rem 0.125rem;
+  font-family: $c_font_stack;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  @include border-radius(2px);
+  @include box-shadow(0px 0px 1px rgba(0,0,0,0.5));
+  padding: 5px;
 }
 
 footer {

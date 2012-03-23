@@ -1,0 +1,69 @@
+$light:   lighten(#333, 35%);
+$lighter: lighten(#333, 45%);
+
+.highlight {
+  color: #333;
+  background-color: #fdf6e3;
+
+  .lineno { color: lighten(#333, 60%); padding-right: 5px; }
+
+  .c   { color: $light; font-style: italic; }         // Comment 
+  .err { color: #a61717; background-color: #e3d2d2; } // Error 
+  .k   { font-weight: bold; }                         // Keyword 
+  .o   { font-weight: bold; }                         // Operator 
+  .cm  { color: $light; font-style: italic; }         // Comment, multiline 
+  .cp  { color: $lighter; font-style: italic; }       // Comment, preproccessor 
+  .c1  { color: $light; font-style: italic; }         // Comment, single line 
+  .cs  { color: $lighter; font-style: italic; }       // Comment, special 
+  .gd  { color: #000; background-color: #ffdddd; }    // Generic, deleted 
+  .gd .x { color: #000; background-color: #ffaaaa; }  // Generic, deleted, specific 
+  .ge  { font-style: italic; }                        // Generic, emphasis 
+  .gr  { color: #aa0000; }                            // Generic, error 
+  .gh  { color: #999999; }                            // Generic, heading 
+  .gi  { color: #000; background-color: #ddffdd; }    // Generic, inserted 
+  .gi .x { color: #000; background-color: #aaffaa; }  // Generic, inserted, specific 
+  .go  { color: #888888; }                            // Generic, output 
+  .gp  { color: #555555; }                            // Generic, prompt 
+  .gs  { font-weight: bold; }                         // Generic, strong 
+  .gu  { color: #aaaaaa; }                            // Generic, subheading 
+  .gt  { color: #aa0000; }                            // Generic, traceback 
+  .kc  { font-weight: bold; }                         // Keyword, constant 
+  .kd  { font-weight: bold; }                         // Keyword, declaration 
+  .kp  { font-weight: bold; }                         // Keyword, pseudo 
+  .kr  { font-weight: bold; }                         // Keyword, reserved 
+  .kt  { color: #445588; font-weight: bold; }         // Keyword, type 
+  .m   { color: #009999; }                            // Literal, number 
+  .s   { color: #d14; }                               // Literal, string 
+  .na  { color: #008080; }                            // Name, attribute 
+  .nb  { color: #0086b3; }                            // Name, built-in 
+  .nc  { color: #445588; font-weight: bold; }         // Name, class 
+  .no  { color: #008080; }                            // Name, constant 
+  .ni  { color: #800080; }                            // Name, entity 
+  .ne  { color: #990000; font-weight: bold; }         // Name, exception 
+  .nf  { color: #990000; font-weight: bold; }         // Name, function 
+  .nn  { color: #555555; }                            // Name, namespace 
+  .nt  { color: #000080; }                            // Name, tag 
+  .nv  { color: #008080; }                            // Name, variable 
+  .ow  { font-weight: bold; }                         // Operator, word 
+  .w   { color: #bbbbbb; }                            // Text, whitespace 
+  .mf  { color: #009999; }                            // Literal, number, float 
+  .mh  { color: #009999; }                            // Literal, number, hex 
+  .mi  { color: #009999; }                            // Literal, number, integer 
+  .mo  { color: #009999; }                            // Literal, number, oct 
+  .sb  { color: #d14; }                               // Literal, string, backtick 
+  .sc  { color: #d14; }                               // Literal, string, char 
+  .sd  { color: #d14; }                               // Literal, string, doc 
+  .s2  { color: #d14; }                               // Literal, string, double 
+  .se  { color: #d14; }                               // Literal, string, escape 
+  .sh  { color: #d14; }                               // Literal, string, heredoc 
+  .si  { color: #d14; }                               // Literal, string, interpol 
+  .sx  { color: #d14; }                               // Literal, string, other 
+  .sr  { color: #009926; }                            // Literal, string, regex 
+  .s1  { color: #d14; }                               // Literal, string, single 
+  .ss  { color: #990073; }                            // Literal, string, symbol 
+  .bp  { color: #999999; }                            // Name, built-in, pseudo 
+  .vc  { color: #008080; }                            // Name, variable, class 
+  .vg  { color: #008080; }                            // Name, variable, global 
+  .vi  { color: #008080; }                            // Name, variable, instance 
+  .il  { color: #009999; }                            // Literal, number, int, long 
+}

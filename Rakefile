@@ -44,7 +44,7 @@ namespace :compass do
 
   desc "Compile SCSS to css"
   task :compile => [:clean] do
-    system "compass compile -s compressed"
+    system "compass compile -s compact"
   end
 end
 
