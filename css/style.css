@@ -37,13 +37,19 @@ h6 { font-size: 16px; font-size: 1rem; }
 
 p { color: #222222; }
 
-blockquote { font-size: 14px; font-size: 0.875rem; font-weight: bold; color: #222222; padding: 10px 20px 10px 20px; border-left: 2px solid #dc322f; }
+blockquote { font-size: 14px; font-size: 0.875rem; color: #222222; padding: 10px 20px 10px 20px; border-left: 2px solid #dc322f; }
 blockquote p { margin-bottom: 0; }
-blockquote cite { margin-top: 10px; margin-top: 0.625rem; display: block; }
+blockquote cite { margin-top: 10px; margin-top: 0.625rem; display: block; font-weight: bold; }
 blockquote cite:before { content: "\2014 \0020"; }
 
 a { color: #268bd2; text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+sup, sub { vertical-align: baseline; position: relative; top: -0.4em; font-size: smaller; font-weight: bold; padding-left: 2px; }
 
 body { width: 100%; *zoom: 1; }
 body:before, body:after { content: ""; display: table; }
@@ -88,5 +94,9 @@ section h6.meta { margin-top: -22px; color: #a6a6a6; font-weight: normal; }
 code.inline { background-color: #fdf6e3; font-family: "Bit Stream Vera Mono", "Consolas", "Courier New", monospace; font-size: 14px; font-size: 0.875rem; border: 1px solid rgba(0, 0, 0, 0.25); padding: 4px 2px 0 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; }
 
 .highlight { margin: 0 2px 24px 2px; margin: 0 0.125rem 1.5rem 0.125rem; font-family: "Bit Stream Vera Mono", "Consolas", "Courier New", monospace; font-size: 14px; font-size: 0.875rem; line-height: 1.25; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5); padding: 5px; }
+
+.notes { margin-bottom: 24px; margin-bottom: 1.5rem; }
+.notes h6 { margin-bottom: 12px; margin-bottom: 0.75rem; }
+.notes p { font-size: 12px; font-size: 0.75rem; margin-bottom: 8px; margin-bottom: 0.5rem; }
 
 footer { display: inline; float: left; width: 700px; margin: 0 10px; height: 4px; background-color: #dc322f; }

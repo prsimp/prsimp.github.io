@@ -3,8 +3,9 @@ require 'haml'
 haml_dir      = "_haml"
 layout_dir    = "_layouts"
 remote_server = "trixie"
+remote_port   = 2222
 remote_dir    = "/home/prs/web/"
-site_address  = "http://thepaulsimpson.com"
+site_address  = "http://prsimp.com"
 
 namespace :haml do
   desc "Clean html layouts"
@@ -75,7 +76,7 @@ task :dev     => ['jekyll:server']
 
 desc "Deploy!"
 task :deploy => ['jekyll:generate'] do
-  system "rsync -v -r -c --delete _site/ #{remote_server}:#{remote_dir}"
+  system "rsync -v -r -c --delete -e 'ssh -p #{remote_port}' _site/ #{remote_server}:#{remote_dir}"
   system "open #{site_address}"
 end
 

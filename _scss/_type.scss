@@ -27,7 +27,7 @@ p { color: $text; }
 blockquote {
   font-size: 14px;
   font-size: 0.875rem;
-  font-weight: bold;
+  
   color: $text;
   padding: 10px 20px 10px 20px;
   border-left: 2px solid $red;
@@ -40,6 +40,7 @@ blockquote {
     margin-top: 10px;
     margin-top: 0.625rem;
     display: block;
+    font-weight: bold;
 
     &:before { content: "\2014 \0020"; }
   }
@@ -50,4 +51,16 @@ a {
   text-decoration: none;
 
   &:hover { text-decoration: underline; }
+}
+
+em { font-style: italic; }
+strong { font-weight: bold }
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: smaller;
+  font-weight: bold;
+  padding-left: 2px;
 }

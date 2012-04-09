@@ -214,6 +214,19 @@ code.inline {
   padding: 5px;
 }
 
+.notes {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+
+  h6 { margin-bottom: 12px; margin-bottom: 0.75rem; }
+
+  p { 
+    font-size: 12px;
+    font-size: 0.75rem; 
+    margin-bottom: 8px;
+    margin-bottom: 0.5rem;}
+}
+
 footer {
   @include column(12);
   height: 4px;
