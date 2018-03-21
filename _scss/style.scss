@@ -3,7 +3,7 @@
 
 // Variables
 // ---------
-$red:           #dc322f; 
+$red:           #dc322f;
 $blue:          #268bd2;
 $gray:          #f5f5f5;
 $text:          #222222;
@@ -82,7 +82,7 @@ header {
     margin-left: 250px;
     margin-right: 0;
 
-    ul { 
+    ul {
       margin-bottom: -10px; // Hack-y way of moving nav down :(
 
       li {
@@ -104,17 +104,17 @@ header {
   }
 }
 
-section { 
-  @include column(12); 
+section {
+  @include column(12);
   margin-bottom: 24px;
   margin-bottom: 1.5rem;
 
-  h1 a { 
+  h1 a {
     color: $headings;
-    text-decoration: none; 
+    text-decoration: none;
 
-    &:hover { 
-      color: $links; 
+    &:hover {
+      color: $links;
       text-decoration: none;
       //opacity: 0.50;
     }
@@ -148,14 +148,14 @@ section {
   ul { list-style: square inside; }
   ol { list-style: decimal inside; }
 
-  li { 
+  li {
     margin-bottom: 6px;
     margin-bottom: 0.375rem;
   }
 }
 
 .about {
-  img { 
+  img {
     border: 1px solid rgba(0,0,0,0.50);
     margin-bottom: 24px;
     margin-bottom: 1.5rem;
@@ -173,6 +173,7 @@ section {
 
   li {
     border-bottom: 1px solid $border_light;
+    padding: 10px 0;
 
     a {
     color: $text;
@@ -186,8 +187,8 @@ section {
     border-bottom: none;
   }
 
-  .date { 
-    float: right; 
+  .date {
+    float: right;
     color: lighten($headings, 45%);
   }
 }
@@ -220,9 +221,9 @@ code.inline {
 
   h6 { margin-bottom: 12px; margin-bottom: 0.75rem; }
 
-  p { 
+  p {
     font-size: 12px;
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     margin-bottom: 8px;
     margin-bottom: 0.5rem;}
 }
