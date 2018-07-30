@@ -21,7 +21,7 @@ namespace :haml do
     Rake::FileList.new("#{haml_dir}/*.haml").each do |f|
       # I should find a more elegant way to do this...
       html_output = layout_dir + "/" + f.split("/")[1].sub(/haml/,'html')
-      
+
       File.open(html_output, 'w') do |output|
         output.puts Haml::Engine.new(File.read(f), :format => :html5, :attr_wrapper => "\"").to_html
       end
@@ -73,12 +73,6 @@ task :haml    => ['haml:parse']
 task :compass => ['compass:compile']
 task :jekyll  => ['jekyll:generate']
 task :dev     => ['jekyll:server']
-
-desc "Deploy!"
-task :deploy => ['jekyll:generate'] do
-  system "rsync -v -r -c --delete -e 'ssh -p #{remote_port}' _site/ #{remote_server}:#{remote_dir}"
-  system "open #{site_address}"
-end
 
 desc "Write new post"
 task :post do
