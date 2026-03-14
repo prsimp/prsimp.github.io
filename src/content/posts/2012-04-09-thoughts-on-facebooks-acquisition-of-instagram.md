@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "Thoughts on Facebook's Acquisition of Instagram"
 location: Manhattan, Kansas
-tags: startups
+tags: [startups]
 ---
 
 <blockquote>

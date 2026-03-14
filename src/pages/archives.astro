@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import PostList from '../components/PostList.astro';
+
+const allPosts = (await getCollection('posts')).sort((a, b) => {
+  return b.id.localeCompare(a.id);
+});
+---
+
+<Default title="Archives | Paul Simpson">
+  <section class="archives">
+    <PostList posts={allPosts} />
+  </section>
+</Default>

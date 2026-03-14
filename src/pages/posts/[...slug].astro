@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => {
+    const slug = post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function getDateFromId(id: string): Date {
+  const match = id.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? new Date(match[1] + 'T00:00:00') : new Date();
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+const postDate = getDateFromId(post.id);
+---
+
+<Default title={post.data.title}>
+  <section class="post">
+    <h1>{post.data.title}</h1>
+    <h6 class="meta">{formatDate(postDate)} &mdash; {post.data.location}</h6>
+    <Content />
+  </section>
+</Default>

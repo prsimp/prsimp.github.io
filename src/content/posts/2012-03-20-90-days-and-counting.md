@@ -1,8 +1,7 @@
 ---
-layout: post
 title: '90 Days and Counting: Moving to New York'
 location: Manhattan, Kansas
-tags: personal
+tags: [personal]
 ---
 
 <blockquote>

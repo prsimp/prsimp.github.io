@@ -1,0 +1,75 @@
+---
+layout: none
+permalink: .well-known/keybase.txt
+---
+
+==================================================================
+https://keybase.io/prsimp
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://prsimp.com
+  * I am prsimp (https://keybase.io/prsimp) on keybase.
+  * I have a public key with fingerprint 57E2 6687 B7D6 82E2 3269  28DA BB27 F3C1 896E C178
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "57e26687b7d682e2326928dabb27f3c1896ec178",
+            "host": "keybase.io",
+            "key_id": "BB27F3C1896EC178",
+            "uid": "356cf3b87f7740f8279469ae1f5fb200",
+            "username": "prsimp"
+        },
+        "service": {
+            "hostname": "prsimp.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396764709,
+    "expire_in": 157680000,
+    "prev": "5072dc653f70b5a501c346fd8f49c7e38f64746946fe736f5fb70bc43525b97b",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owGbwMvMwMW4W/3zwc68gxWMpw+8TWIIdvigWq2UlJ9SqWRVrZSdCqbSMvPSU4sK
+ijLzSpSslEzNU43MzCzMk8xTzCyMUo2MjcwsjSxSEpOSjMzTjJMNLSzNUpMNzS2U
+dJQy8otBOoDGJCUWp+pl5gPFgJz4zBSgqJOTkbmbsTNIvaszRH0pWMLY1Cw5zTjJ
+wjzN3NzEIM3CyNzSxMwyMdUwzTQtycjAAKSwOLUoLzE3Fai6oKg4M7dAqVZHCShW
+lpmcCnIxyGIUeb3k/FygvoKi/JL85PwcoHhGSUmBFUhbSWUBSF15alI81IT4pMy8
+FKCfgRrKUoHa8/OUrAyBKpNLMkFGGhpbmpmbmZgbWOoopVYUZBalxmeCVJiam1kY
+AAHImtQyUEgZmBulJJuZGqeZGySZJpoaGCYbm5ilpVikmVgmm6caW6QBTQF6DSiW
+am5sBvIeUGGyibGpkWmSpXmSEshPhXn5SlYmQGcmpgONLM5Mz0ssKS1KVartZJJh
+YWDkYmBjZQLFGgMXpwAsLj3OCDB0fJmvwyZy/duz45u3b+16fWJ+kXmM6/0Nt1wM
+vTZWPPu8R97nzqR9p+6cmuTTu+fFBrf1yuptKl+cw98xfS+Rza2SEv7MkXNATr6P
+LTikZ/oHganmLNuTDyjW6uz7vJurZuaFRZXtZ9WW5m3akSLU1T/viqttqO2Unbzb
+tLY16Z1f8t55a4E/43prK8GLJws4vRjt/m37419zXnfeHpkZu+/ek23bbpno9av3
+RuvbmXInDLd6KOxctsph3mQO0/arbUFamSYZis78Tx+5BiV/fCLO+eXTLb/juj7c
+9d89ePeKr9+252ftwnerdso7CP8y0A6aa60rLjWte8Fr/dpvSem+ms8PKpT48L09
+KBPk9y7udnKp1BKdH9/+CwjumvtzZ4KESo1kiNTj97+ddpS/PsceKt6w/GretAtr
+9v0M+pn5M644nM9wr9ubp3dVOa39u8N2bV33+MmbYOdf7E2Tj0yJPm2Ywzz38p9j
+WTzvphyIvpV7zvvS60vKXZvOnj6y8NHzpMm9lQ4aSzsaQ9U4b/pu2p1X3ZS4/tGu
+/Scqmk9M3Cf2cKLn/sKmfWbBFwRWd2kqF3yWu+X95oGOjEMig+EVg4C5AYtubXia
+vdC6xq9SU/ZxefG5ta8Uaw+st35Y/9ew/+SiqxO8FP9/LPpw4dWOoElOxUYTRfdN
+SEladD5w3QW1VZkb+JTyhJ9ZyQbcP83R1eV35HRuTMDEFwA=
+=NanL
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/prsimp
+
+==================================================================

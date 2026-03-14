@@ -1,0 +1,42 @@
+---
+interface Post {
+  id: string;
+  data: {
+    title: string;
+  };
+}
+
+interface Props {
+  posts: Post[];
+  title?: string;
+}
+
+const { posts, title } = Astro.props;
+
+function getDateFromId(id: string): Date {
+  const match = id.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? new Date(match[1] + 'T00:00:00') : new Date();
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+function getSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+---
+
+{title && <h5>{title}</h5>}
+<ul>
+  {posts.map((post, i) => (
+    <li class={i === posts.length - 1 ? 'the_end' : ''}>
+      <a href={`/posts/${getSlug(post.id)}.html`}>{post.data.title}</a>
+      <span class="date">{formatDate(getDateFromId(post.id))}</span>
+    </li>
+  ))}
+</ul>

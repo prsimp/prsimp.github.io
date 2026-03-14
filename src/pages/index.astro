@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import PostList from '../components/PostList.astro';
+
+const allPosts = (await getCollection('posts')).sort((a, b) => {
+  return b.id.localeCompare(a.id);
+});
+
+const latestPost = allPosts[0];
+const recentPosts = allPosts.slice(1);
+
+function getDateFromId(id: string): Date {
+  const match = id.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? new Date(match[1] + 'T00:00:00') : new Date();
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+function getSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+
+const { Content } = await render(latestPost);
+const latestDate = getDateFromId(latestPost.id);
+---
+
+<Default title="Paul Simpson">
+  <section class="first">
+    <h1><a href={`/posts/${getSlug(latestPost.id)}.html`}>{latestPost.data.title}</a></h1>
+    <h6 class="meta">{formatDate(latestDate)} &mdash; {latestPost.data.location}</h6>
+    <Content />
+  </section>
+  {recentPosts.length > 0 && (
+    <section class="short_list">
+      <PostList posts={recentPosts} title="Recent Ramblings" />
+    </section>
+  )}
+</Default>
