@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+if (import.meta.env.PROD) {
+  return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const ideas = (await getCollection('scratch')).sort((a, b) => {
+  return b.id.localeCompare(a.id);
+});
+---
+
+<Default title="Scratch Ideas">
+  <section>
+    <h1>Scratch Ideas</h1>
+    {ideas.length === 0 ? (
+      <p>No scratch ideas yet.</p>
+    ) : (
+      <ul>
+        {ideas.map((idea) => (
+          <li>
+            <a href={`/scratch/${idea.id}.html`}>{idea.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Default>

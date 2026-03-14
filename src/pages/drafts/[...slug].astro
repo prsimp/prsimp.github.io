@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+export async function getStaticPaths() {
+  if (import.meta.env.PROD) return [];
+  const drafts = await getCollection('drafts');
+  return drafts.map((draft) => {
+    const slug = draft.id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    return {
+      params: { slug },
+      props: { draft },
+    };
+  });
+}
+
+const { draft } = Astro.props;
+const { Content } = await render(draft);
+
+function getDateFromId(id: string): Date {
+  const match = id.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? new Date(match[1] + 'T00:00:00') : new Date();
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
+const draftDate = getDateFromId(draft.id);
+---
+
+<Default title={`[DRAFT] ${draft.data.title}`}>
+  <section class="post">
+    <h1>{draft.data.title}</h1>
+    <h6 class="meta">{formatDate(draftDate)} &mdash; {draft.data.location}</h6>
+    <Content />
+  </section>
+</Default>

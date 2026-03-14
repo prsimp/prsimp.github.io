@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+if (import.meta.env.PROD) {
+  return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const drafts = (await getCollection('drafts')).sort((a, b) => {
+  return b.id.localeCompare(a.id);
+});
+
+function getSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+---
+
+<Default title="Drafts">
+  <section>
+    <h1>Drafts</h1>
+    {drafts.length === 0 ? (
+      <p>No drafts yet.</p>
+    ) : (
+      <ul>
+        {drafts.map((draft) => (
+          <li>
+            <a href={`/drafts/${getSlug(draft.id)}.html`}>{draft.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Default>

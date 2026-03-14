@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+export async function getStaticPaths() {
+  if (import.meta.env.PROD) return [];
+  const ideas = await getCollection('scratch');
+  return ideas.map((idea) => ({
+    params: { slug: idea.id },
+    props: { idea },
+  }));
+}
+
+const { idea } = Astro.props;
+const { Content } = await render(idea);
+---
+
+<Default title={`[SCRATCH] ${idea.data.title}`}>
+  <section class="post">
+    <h1>{idea.data.title}</h1>
+    {idea.data.tags && (
+      <h6 class="meta">{idea.data.tags.join(', ')}</h6>
+    )}
+    <Content />
+  </section>
+</Default>
