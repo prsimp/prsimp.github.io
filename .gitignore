@@ -3,3 +3,4 @@ dist/
 .astro/
 src/content/drafts/
 src/content/scratch/
+.claude/settings.local.json
