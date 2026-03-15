@@ -64,6 +64,16 @@ tags: [optional]
 ```
 URL: `/scratch/:filename.html`
 
+## Writing Guidelines
+
+When drafting or editing blog content, follow these guidelines:
+
+- **Conversational but not rambling** — reads like telling a friend over coffee, not performing
+- **Honest about uncertainty** — don't pretend to have all the answers
+- **Light touch on sentiment** — reflective without being nostalgic or saccharine
+- **Specifics over generalities** — concrete details about work, tech, the city, interests. Family shows up naturally but isn't the subject.
+- **Family privacy** — Kara by name when relevant, kids only in passing (not by name, no anecdotes that center on them)
+
 ## Dependencies
 
 Node.js (managed via mise), Astro. See `package.json`.
