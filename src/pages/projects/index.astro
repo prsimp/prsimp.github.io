@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+const projects = await getCollection('projects');
+
+const active = projects.filter((p) => p.data.status === 'active');
+const other = projects.filter((p) => p.data.status !== 'active');
+
+active.sort((a, b) => b.data.started - a.data.started);
+other.sort((a, b) => b.data.started - a.data.started);
+
+const allProjects = [...active, ...other];
+---
+
+<Default title="Projects">
+  <section>
+    <h1>Projects</h1>
+    {
+      allProjects.length === 0 ? (
+        <p>No projects yet.</p>
+      ) : (
+        <ul>
+          {allProjects.map((project) => (
+            <li>
+              <a href={`/projects/${project.id}.html`}>{project.data.title}</a>
+              {project.data.status !== 'active' && (
+                <span class="date"> ({project.data.status})</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</Default>

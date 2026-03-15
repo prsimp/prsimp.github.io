@@ -19,49 +19,75 @@ npm run preview   # Preview production build locally
 Astro static site with content collections:
 
 - `src/content/posts/` — Blog posts in Markdown with YAML front matter
+- `src/content/projects/` — Project write-ups in Markdown
 - `src/content/drafts/` — Draft posts (gitignored, dev-only)
 - `src/content/scratch/` — Rough ideas/notes (gitignored, dev-only)
 - `src/layouts/Default.astro` — Main HTML shell (head, header/nav, footer, TypeKit)
 - `src/components/PostList.astro` — Reusable post list component
-- `src/pages/` — Page routes (index, about, archives, 404, posts/[...slug], drafts/, scratch/)
+- `src/pages/` — Page routes (index, about, archives, 404, posts/[...slug], projects/, drafts/, scratch/)
 - `public/` — Static assets (images, CNAME, favicon, styles)
 
 ## Post Format
 
 Posts use filename convention `YYYY-MM-DD-title-slug.md` with front matter:
+
 ```yaml
 ---
-title: "Post Title"
-location: "City, ST"
+title: 'Post Title'
+location: 'City, ST'
 tags: [tag1, tag2]
 ---
 ```
 
 URL structure: `/posts/:title-slug.html`
 
+Posts can optionally reference a project via `project: project-id` in front matter.
+
+## Project Format
+
+Projects use any filename (`project-name.md`) with front matter:
+
+```yaml
+---
+title: 'Project Name'
+status: active
+url: 'https://...' # optional
+repo: 'https://github.com/...' # optional
+tags: [ruby, open-source]
+started: 2015
+ended: 2020 # optional
+---
+```
+
+URL structure: `/projects/:filename.html`
+
 ## Drafts & Scratch Ideas
 
-Both are local-only (gitignored) and only visible during `npm run dev`. Nav links appear in dev mode only.
+Both are local-only (gitignored) and only visible during `npm run dev`. Navigate directly to `/drafts` or `/scratch` — no nav links.
 
 **Drafts** — near-complete posts, same format as published posts:
+
 ```yaml
 # src/content/drafts/YYYY-MM-DD-title-slug.md
 ---
-title: "Draft Title"
-location: "City, ST"
+title: 'Draft Title'
+location: 'City, ST'
 tags: [tag1, tag2]
 ---
 ```
+
 URL: `/drafts/:title-slug.html`
 
 **Scratch** — rough ideas/notes, minimal front matter:
+
 ```yaml
 # src/content/scratch/any-name.md
 ---
-title: "Idea Title"
+title: 'Idea Title'
 tags: [optional]
 ---
 ```
+
 URL: `/scratch/:filename.html`
 
 ## Writing Guidelines
@@ -73,6 +99,18 @@ When drafting or editing blog content, follow these guidelines:
 - **Light touch on sentiment** — reflective without being nostalgic or saccharine
 - **Specifics over generalities** — concrete details about work, tech, the city, interests. Family shows up naturally but isn't the subject.
 - **Family privacy** — Kara by name when relevant, kids only in passing (not by name, no anecdotes that center on them)
+
+## Linting & Formatting
+
+```bash
+npm run lint          # ESLint (Astro + TypeScript)
+npm run format        # Prettier auto-fix
+npm run format:check  # Prettier check (used in CI)
+```
+
+Commits are enforced via **commitlint** using [Conventional Commits](https://www.conventionalcommits.org/). Husky runs lint-staged on pre-commit and commitlint on commit-msg.
+
+CI runs `lint` and `format:check` before building — local and CI use the same config.
 
 ## Dependencies
 

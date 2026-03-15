@@ -7,6 +7,7 @@ const posts = defineCollection({
     title: z.string(),
     location: z.string(),
     tags: z.array(z.string()),
+    project: z.string().optional(),
   }),
 });
 
@@ -27,4 +28,17 @@ const scratch = defineCollection({
   }),
 });
 
-export const collections = { posts, drafts, scratch };
+const projects = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  schema: z.object({
+    title: z.string(),
+    status: z.string(),
+    url: z.string().optional(),
+    repo: z.string().optional(),
+    tags: z.array(z.string()),
+    started: z.number(),
+    ended: z.number().optional(),
+  }),
+});
+
+export const collections = { posts, drafts, scratch, projects };

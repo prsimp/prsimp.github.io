@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const relatedPosts = (await getCollection('posts'))
+  .filter((post) => post.data.project === project.id)
+  .sort((a, b) => b.id.localeCompare(a.id));
+---
+
+<Default title={project.data.title}>
+  <section class="post">
+    <h1>{project.data.title}</h1>
+    <h6 class="meta">
+      {project.data.started}{project.data.ended && `–${project.data.ended}`}
+      {' '}&mdash; {project.data.status}
+      {
+        project.data.repo && (
+          <>
+            {' '}
+            &mdash; <a href={project.data.repo}>source</a>
+          </>
+        )
+      }
+      {
+        project.data.url && (
+          <>
+            {' '}
+            &mdash; <a href={project.data.url}>live</a>
+          </>
+        )
+      }
+    </h6>
+    <Content />
+    {
+      relatedPosts.length > 0 && (
+        <>
+          <h5>Related Posts</h5>
+          <ul>
+            {relatedPosts.map((post) => (
+              <li>
+                <a
+                  href={`/posts/${post.id.replace(/^\d{4}-\d{2}-\d{2}-/, '')}.html`}
+                >
+                  {post.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </section>
+</Default>
