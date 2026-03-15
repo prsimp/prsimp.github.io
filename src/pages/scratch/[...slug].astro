@@ -18,9 +18,7 @@ const { Content } = await render(idea);
 <Default title={`[SCRATCH] ${idea.data.title}`}>
   <section class="post">
     <h1>{idea.data.title}</h1>
-    {idea.data.tags && (
-      <h6 class="meta">{idea.data.tags.join(', ')}</h6>
-    )}
+    {idea.data.tags && <h6 class="meta">{idea.data.tags.join(', ')}</h6>}
     <Content />
   </section>
 </Default>

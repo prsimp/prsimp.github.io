@@ -14,16 +14,18 @@ const ideas = (await getCollection('scratch')).sort((a, b) => {
 <Default title="Scratch Ideas">
   <section>
     <h1>Scratch Ideas</h1>
-    {ideas.length === 0 ? (
-      <p>No scratch ideas yet.</p>
-    ) : (
-      <ul>
-        {ideas.map((idea) => (
-          <li>
-            <a href={`/scratch/${idea.id}.html`}>{idea.data.title}</a>
-          </li>
-        ))}
-      </ul>
-    )}
+    {
+      ideas.length === 0 ? (
+        <p>No scratch ideas yet.</p>
+      ) : (
+        <ul>
+          {ideas.map((idea) => (
+            <li>
+              <a href={`/scratch/${idea.id}.html`}>{idea.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </section>
 </Default>

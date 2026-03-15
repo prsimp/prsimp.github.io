@@ -33,10 +33,12 @@ function getSlug(id: string): string {
 
 {title && <h5>{title}</h5>}
 <ul>
-  {posts.map((post, i) => (
-    <li class={i === posts.length - 1 ? 'the_end' : ''}>
-      <a href={`/posts/${getSlug(post.id)}.html`}>{post.data.title}</a>
-      <span class="date">{formatDate(getDateFromId(post.id))}</span>
-    </li>
-  ))}
+  {
+    posts.map((post, i) => (
+      <li class={i === posts.length - 1 ? 'the_end' : ''}>
+        <a href={`/posts/${getSlug(post.id)}.html`}>{post.data.title}</a>
+        <span class="date">{formatDate(getDateFromId(post.id))}</span>
+      </li>
+    ))
+  }
 </ul>

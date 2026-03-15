@@ -33,13 +33,21 @@ const latestDate = getDateFromId(latestPost.id);
 
 <Default title="Paul Simpson">
   <section class="first">
-    <h1><a href={`/posts/${getSlug(latestPost.id)}.html`}>{latestPost.data.title}</a></h1>
-    <h6 class="meta">{formatDate(latestDate)} &mdash; {latestPost.data.location}</h6>
+    <h1>
+      <a href={`/posts/${getSlug(latestPost.id)}.html`}
+        >{latestPost.data.title}</a
+      >
+    </h1>
+    <h6 class="meta">
+      {formatDate(latestDate)} &mdash; {latestPost.data.location}
+    </h6>
     <Content />
   </section>
-  {recentPosts.length > 0 && (
-    <section class="short_list">
-      <PostList posts={recentPosts} title="Recent Ramblings" />
-    </section>
-  )}
+  {
+    recentPosts.length > 0 && (
+      <section class="short_list">
+        <PostList posts={recentPosts} title="Recent Ramblings" />
+      </section>
+    )
+  }
 </Default>

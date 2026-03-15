@@ -3,22 +3,27 @@ import { getCollection } from 'astro:content';
 import Default from '../layouts/Default.astro';
 import PostList from '../components/PostList.astro';
 
-const allPosts = (await getCollection('posts')).sort((a, b) => {
-  return b.id.localeCompare(a.id);
-}).slice(0, 5);
+const allPosts = (await getCollection('posts'))
+  .sort((a, b) => {
+    return b.id.localeCompare(a.id);
+  })
+  .slice(0, 5);
 ---
 
 <Default title="Not Found - Paul Simpson">
   <section class="short_list">
     <h1>Oh no...</h1>
     <p>
-      I'm sorry, but whatever it was you were looking for can't seem to be located.
-      It could be that I've moved it to some other location, although it sure wasn't
-      very nice of me to do that without properly redirecting. I bet you can find whatever
-      you were looking for if you <a href="/archives">check the archives</a>.
+      I'm sorry, but whatever it was you were looking for can't seem to be
+      located. It could be that I've moved it to some other location, although
+      it sure wasn't very nice of me to do that without properly redirecting. I
+      bet you can find whatever you were looking for if you <a href="/archives"
+        >check the archives</a
+      >.
     </p>
     <p>
-      Again, sorry. This is a bit awkward. Just in case, here is a list of my most recent posts:
+      Again, sorry. This is a bit awkward. Just in case, here is a list of my
+      most recent posts:
     </p>
     <PostList posts={allPosts} title="Recent Ramblings" />
   </section>

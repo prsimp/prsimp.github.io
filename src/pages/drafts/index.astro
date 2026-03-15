@@ -18,16 +18,20 @@ function getSlug(id: string): string {
 <Default title="Drafts">
   <section>
     <h1>Drafts</h1>
-    {drafts.length === 0 ? (
-      <p>No drafts yet.</p>
-    ) : (
-      <ul>
-        {drafts.map((draft) => (
-          <li>
-            <a href={`/drafts/${getSlug(draft.id)}.html`}>{draft.data.title}</a>
-          </li>
-        ))}
-      </ul>
-    )}
+    {
+      drafts.length === 0 ? (
+        <p>No drafts yet.</p>
+      ) : (
+        <ul>
+          {drafts.map((draft) => (
+            <li>
+              <a href={`/drafts/${getSlug(draft.id)}.html`}>
+                {draft.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </section>
 </Default>
