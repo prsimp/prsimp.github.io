@@ -18,7 +18,11 @@
     "*.{js,ts,astro,json,md}": "prettier --check"
   },
   "dependencies": {
-    "astro": "^6.0.4"
+    "@astrojs/check": "^0.9.7",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^6.0.4",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.4",
