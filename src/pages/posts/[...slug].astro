@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Default from '../../layouts/Default.astro';
+import { getExcerpt } from '../../utils/excerpt';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -30,9 +31,10 @@ function formatDate(date: Date): string {
 }
 
 const postDate = getDateFromId(post.id);
+const description = post.data.description ?? getExcerpt(post.body ?? '');
 ---
 
-<Default title={post.data.title}>
+<Default title={post.data.title} description={description} ogType="article">
   <section class="post">
     <h1>{post.data.title}</h1>
     <h6 class="meta">{formatDate(postDate)} &mdash; {post.data.location}</h6>

@@ -7,6 +7,7 @@ const posts = defineCollection({
     title: z.string(),
     location: z.string(),
     tags: z.array(z.string()),
+    description: z.string().optional(),
     project: z.string().optional(),
   }),
 });
@@ -17,6 +18,7 @@ const drafts = defineCollection({
     title: z.string(),
     location: z.string(),
     tags: z.array(z.string()),
+    description: z.string().optional(),
   }),
 });
 
