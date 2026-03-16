@@ -4,3 +4,5 @@ dist/
 src/content/drafts/
 src/content/scratch/
 .claude/settings.local.json
+test-results/
+playwright-report/
